@@ -1,41 +1,59 @@
 # NYC Job Salary Range Prediction
 
-Machine learning project that predicts the minimum and maximum annual salary of NYC government job postings.
+A machine learning regression project that predicts the **minimum and maximum annual salary** for New York City government job postings.
 
-## Model workflow
+## Project Overview
 
-- Data cleaning and EDA
+The project uses job-posting information such as agency, job title, employment details, career level, and location to estimate salary ranges.
+
+The workflow includes:
+
+- Data cleaning and exploratory analysis
 - Salary annualization
-- Sentence Transformer embeddings (`all-MiniLM-L6-v2`)
-- CatBoost target encoding for categorical variables
-- Two LightGBM regression models
+- Text feature extraction
+- Sentence Transformer embeddings using `all-MiniLM-L6-v2`
+- Categorical feature encoding
+- LightGBM regression
+- Separate models for minimum and maximum salary
 - RMSE and R² evaluation
-- Streamlit deployment
 
-## Running locally
+## Models
 
-1. Run the Colab notebook and save the model artifacts.
-2. Copy the generated `artifacts` folder into this project folder.
-3. Install dependencies:
+Two LightGBM regression models are trained:
 
-```bash
-pip install -r requirements.txt
-```
+- Minimum salary prediction
+- Maximum salary prediction
 
-4. Start Streamlit:
+The project focuses on building a practical salary-estimation model from publicly available job-posting information.
 
-```bash
-streamlit run app.py
-```
+## Files
 
-The app will open in your browser.
+- `NYC_Job_Salary_Range_Prediction_Polished.ipynb` — Google Colab notebook
+- `README.md` — project documentation
+- `requirements.txt` — Python dependencies
 
-## Google Colab
+## Running the Notebook
 
-The notebook is written for Google Colab. It mounts Google Drive, loads the dataset from Drive, trains the models, and saves the artifacts.
+The notebook is designed for **Google Colab**.
 
-## Deployment
+1. Open the notebook in Google Colab.
+2. Mount Google Drive when prompted.
+3. Update the dataset path if necessary.
+4. Run the notebook from top to bottom.
+5. Review the model evaluation and prediction results.
 
-For Streamlit Community Cloud, upload `app.py`, `requirements.txt`, and the `artifacts` folder to a GitHub repository. Set the main file to `app.py`.
+## Key Learning Outcomes
 
-The Sentence Transformer model is loaded by name when the app starts, so the local Hugging Face model files do not need to be committed to GitHub.
+This project demonstrates:
+
+- Regression modelling
+- Salary data preprocessing
+- Text embeddings
+- Categorical feature handling
+- LightGBM
+- Model evaluation using RMSE and R²
+- Feature engineering for real-world tabular data
+
+## Note
+
+Salary predictions are estimates based on the information available in the dataset. Actual compensation can vary depending on experience, qualifications, responsibilities, and other factors.
